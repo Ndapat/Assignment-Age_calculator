@@ -15,6 +15,8 @@ sumbitBtn.addEventListener("click", (e) => {
   calcAge();
 });
 
+
+
 function calcAge() {
   
   let currentDate = new Date();
@@ -80,6 +82,7 @@ function showResult(element, diff) {
       clearInterval(timer);
     }
   }, 500 / diff);
+  localStorage.setItem("Age", "Numbers");
 }
 
 function validateInput(inputElement, errorMsgElement, validationConditions) {
