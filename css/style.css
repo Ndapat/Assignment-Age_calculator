@@ -1,11 +1,11 @@
 :root {
   --light-red: hsl(0, 100%, 67%); /* error */
   --white: hsl(0, 0%, 100%); /* white */
-  --purple: hsl(259, 100%, 65%); /* main color */
+  --purple: rgb(128, 0, 128); /* main color */
   --smokey-grey: hsl(0, 1%, 50%); /* borders */
   --black: hsl(0, 0%, 0%); /* black */
   --tra-2: 0.2s;
-  --light-grey: hsl(0, 0%, 86%); /* body */
+  --light-grey: hsl(0, 0%, 86%); /*body*/
 }
 * {
   box-sizing: border-box;
