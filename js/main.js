@@ -1,4 +1,4 @@
-// Get wanted elements
+
 const sumbitBtn = document.getElementById("sumbit-btn"),
   yearInput = document.getElementById("year-input"),
   monthInput = document.getElementById("month-input"),
@@ -16,13 +16,13 @@ sumbitBtn.addEventListener("click", (e) => {
 });
 
 function calcAge() {
-  // Get current time
+  
   let currentDate = new Date();
   let currentYear = currentDate.getFullYear();
   let currentMonth = currentDate.getMonth();
   let currentDay = currentDate.getDate();
 
-  // Handle validation
+  
   validateInput(
     yearInput,
     yearErrorMsg,
@@ -31,30 +31,29 @@ function calcAge() {
   validateInput(monthInput, monthErrorMsg, (value) => value <= 12 && value > 0);
   validateInput(dayInput, dayErrorMsg, (value) => value <= 31 && value > 0);
 
-  // Calculate the difference in years, months, and days
   let birthDate = new Date(
     yearInput.value,
-    monthInput.value - 1, // Adjust month value to zero-based index
+    monthInput.value - 1, 
     dayInput.value
   );
   let yearsDiff = currentYear - birthDate.getFullYear();
   let monthsDiff = currentMonth - birthDate.getMonth();
   let daysDiff = currentDay - birthDate.getDate();
 
-  // handle negative months
+  
   if (monthsDiff < 0) {
     yearsDiff--;
     monthsDiff += 12;
   }
 
-  // handle negative days
+  
   if (daysDiff < 0) {
     monthsDiff--;
     const daysInLastMonth = new Date(currentYear, currentMonth, 0).getDate();
     daysDiff += daysInLastMonth;
   }
 
-  // show results
+  
   let allInputDivs = document.querySelectorAll(".age-calc-form > div");
   let hasInvalidClass = false;
   allInputDivs.forEach((el) => {
